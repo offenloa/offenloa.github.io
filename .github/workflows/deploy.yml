@@ -30,13 +30,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+      - name: Navigate to project
+        run: cd portfolio_site
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
           node-version: lts/*
           cache: 'npm'
-      - name: Navigate to project
-        run: cd portfolio_site
       - name: Install dependencies
         run: npm ci
       - name: Build
